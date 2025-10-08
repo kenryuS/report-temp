@@ -155,13 +155,14 @@
     in
     {
       devShells.default = pkgs.stdenv.mkDerivation {
-	inherit name;
+        inherit name;
         shellHook = ''
           export PS1="${name} \w \$ "
         '';
         buildInputs = [
           texEnv
           vimWithTex
+          pkgs._0xproto
           pkgs.qpdf
           pkgs.kdePackages.okular
         ];

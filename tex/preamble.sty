@@ -1,0 +1,47 @@
+\ProvidesPackage{mypreamble}
+
+\usepackage{fontspec}
+\usepackage[mono=false]{libertine}
+\usepackage{noto}
+\setmonofont{0xProto}
+
+\setCJKmonofont{0xProto}
+
+\usepackage[european]{circuitikz}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
+}
+\urlstyle{same}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codekeyword}{rgb}{0.3373, 0.6118, 0.8392}
+\definecolor{codestring}{rgb}{0.5961, 0.7647, 0.4745}
+\definecolor{codeidentifier}{rgb}{0.6706, 0.6980, 0.7490}
+\definecolor{codenumber}{rgb}{0.8980, 0.7529, 0.4824}
+\definecolor{codecomment}{rgb}{0.3765, 0.5451, 0.3059}
+\definecolor{codebackground}{rgb}{0.1569, 0.1725, 0.2039}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebackground},
+    basicstyle=\color{codeidentifier}\ttfamily\footnotesize,
+    stringstyle=\color{codestring},
+    numberstyle=\ttfamily\color{codenumber},
+    identifierstyle=\color{codeidentifier},
+    keywordstyle=\color{codekeyword},
+    commentstyle=\color{codecomment},
+    numbers=left,
+    numbersep=10pt,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=true,
+    showtabs=true,
+    breakatwhitespace=true,
+    frame=single,
+    framexleftmargin=5mm
+}
+
