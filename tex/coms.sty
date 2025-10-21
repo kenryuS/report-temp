@@ -1,0 +1,32 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mycommands}
+
+\newcommand{\reporttitle}[1]{
+    \def\@title{#1}
+    \title{#1}
+}
+
+\newcommand{\reportauthor}[1]{
+    \def\@author{#1}
+    \author{#1}
+}
+
+\newcommand{\reportdate}[3]{
+    \def\@year{#1}
+    \def\@month{#2}
+    \def\@day{#3}
+    \date{\@year \@month \@day}
+}
+
+\newcommand{\turnindate}[3]{
+    \def\@turninyear{#1}
+    \def\@turninmonth{#2}
+    \def\@turninday{#3}
+}
+
+\newcommand{\schoolname}[1]{\def\@schoolname{#1}}
+\newcommand{\studentid}[1]{\def\@studentid{#1}}
+\newcommand{\seatingnum}[1]{\def\@seatingnum{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\subject}[1]{\def\@subject{#1}}
+\newcommand{\professor}[1]{\def\@professor{#1}}

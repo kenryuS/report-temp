@@ -1,16 +1,21 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypreamble}
 
-\usepacakge[backend=biber]{biblatex}
+\usepackage[backend=biber]{biblatex}
 
 \usepackage{fontspec}
 \usepackage[mono=false]{libertine}
 \usepackage{noto}
 \setmonofont{0xProto}
 
-\setCJKmonofont{0xProto}
-
 \usepackage[european]{circuitikz}
+
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{here}
+
+\usepackage[hang,small,bf]{caption}
+\captionsetup{compatibility=false}
 
 \usepackage{hyperref}
 \hypersetup{
