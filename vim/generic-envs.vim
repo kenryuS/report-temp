@@ -7,4 +7,5 @@ augroup latex_generic_envs_abbr
     iabbrev <buffer> codelsenv <Esc>i\begin{lstlisting}[language=.,title={.}]<CR><CR>\end{lstlisting}<Esc>2k0f.vc
     iabbrev <buffer> itemenv <Esc>i\begin{itemize}<CR><CR>\end{itemize}<Esc>k
     iabbrev <buffer> enumenv <Esc>i\begin{enumerate}<CR><CR>\end{enumerate}<Esc>k
+    iabbrev <buffer> figenv <Esc>i\begin{figure}[tbh]<CR>\centering<CR><CR>\end{figure}<Esc>k
 augroup END

@@ -94,6 +94,14 @@
 
             imap jk <Plug>(eskk:toggle)
             cmap jk <Plug>(eskk:toggle)
+
+            imap jj <C-]>
+
+            augroup autosource
+                autocmd!
+                autocmd Filetype tex source vim/generic-envs.vim
+                autocmd Filetype tex source vim/generic.vim
+            augroup END
           '';
         };
       };
