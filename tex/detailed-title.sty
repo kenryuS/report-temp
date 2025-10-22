@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{detailedTitle}
+
+\usepackage{tex/coms}
+
+\newcommand{\detailedtitle}{
+    \begin{titlepage}
+        \thispagestyle{empty}
+        \begin{center}
+            \Huge
+            {\@title}
+
+            \vspace{0.5cm}
+            \large
+            {\@department ： \@subject}
+
+            {担当教員：\@professor}
+
+            \vspace{0.5cm}
+
+            {\@author}
+
+            {(学籍番号：{\@studentid}　名列番号：{\@seatingnum})}
+
+            \vfill
+
+            {提出日：\@turninyear \@turninmonth \@turninday}
+
+            {\@year \@month \@day}
+
+            \vspace{0.25cm}
+        \end{center}
+    \end{titlepage}
+}
