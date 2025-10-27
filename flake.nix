@@ -98,9 +98,8 @@
             imap jj <C-]>
 
             augroup autosource
-                autocmd!
-                autocmd Filetype tex source vim/generic-envs.vim
-                autocmd Filetype tex source vim/generic.vim
+                source vim/generic-envs.vim
+                source vim/generic.vim
             augroup END
           '';
         };
