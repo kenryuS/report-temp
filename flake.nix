@@ -158,6 +158,7 @@
         xcolor
         xstring
         xpatch
+        blindtext
       ] ++ [ ps.import ]);
     in
     {
