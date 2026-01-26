@@ -159,6 +159,8 @@
         xstring
         xpatch
         blindtext
+        multirow
+        etoolbox
       ] ++ [ ps.import ]);
     in
     {
