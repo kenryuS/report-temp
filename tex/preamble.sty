@@ -1,7 +1,14 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{mypreamble}
 
-\usepackage[backend=biber]{biblatex}
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none,
+    hyperref=false,
+    alldates=ymd
+]{biblatex}
+\usepackage[japanese]{babel}
 
 \usepackage{fontspec}
 \usepackage[mono=false]{libertine}

@@ -26,7 +26,7 @@
 \setcounter{expdatecount}{0}
 \newcommand{\expdates}{}
 \newcommand{\addExperimentDate}[1]{\listadd{\expdates}{#1}}
-\newcommand{\expdatecs}[1]{\stepcounter{expdatecount} & \underline{\theexpdatecount. #1} \@arraycr}
+\newcommand{\expdatecs}[1]{\stepcounter{expdatecount} & \underline{\theexpdatecount.\qquad #1} \@arraycr}
 
 \newcommand{\expgroup}[1]{\def\@expgroup{#1}}
 \newcommand{\reportid}[1]{\def\@reportid{#1}}
@@ -43,7 +43,7 @@
         \vspace{2em}
 
         \begin{center}
-            {\Large {\@schoolyear}年度 {\@department}\quad {\@grade}年}
+            {\Large {\@schoolyear}年度\quad {\@department} {\@grade}年}
 
             \vspace{2em}
 
@@ -53,20 +53,24 @@
         \begin{flushleft}
             \vspace{1em}
 
-            レポート記号：\qquad {\@reportid}
+            {\large レポート記号：\quad {\@reportid}}
 
             \vspace{1em}
 
-            実験テーマ名：\qquad {\@title}
+            {\large 実験テーマ名：\quad {\@title}}
 
             \vspace{1em}
 
-            提出者：\quad \underline{実験班：\quad \@expgroup}\quad \underline{名列番号\quad \@seatingnum}\quad \underline{氏名\quad \@author}
+            提出者：\quad \underline{実験班\quad \@expgroup}\quad \underline{名列番号\quad \@seatingnum}\quad \underline{氏名\quad \@author}
 
             \vspace{1em}
 
             \hspace{-0.5625em}\begin{tabular}{ lp{5em}p{5em} }
-                \multirow[t]{3}{7.3125em}{共同実験者：} \forlistloop{\researchercs}{\researchers}
+                \ifthenelse{\isundefined{\researchers}}{
+                    \multirow[t]{3}{7.3125em}{共同実験者：} & なし & \\
+                }{
+                    \multirow[t]{3}{7.3125em}{共同実験者：} \forlistloop{\researchercs}{\researchers}
+                }
             \end{tabular}
 
             \vspace{5em}

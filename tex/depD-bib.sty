@@ -1,0 +1,15 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{depD-bib}
+
+\renewbibmacro*{cite}{
+  \printtext[bibhyperref]{%
+  \printfield{labelprefix}%
+  \printfield{labelnumber})%
+  \ifbool{bbx:subentry}
+    {\printfield{entrysetcount}}
+    {}}}
+\DeclareFieldFormat{title}{"\mkbibemph{#1}"}
+\DeclareFieldFormat{chapter}{#1\bibstring{章}}
+\DeclareFieldFormat{pages}{#1\bibstring{頁}}
+\DeclareFieldFormat{publisher}{#1}
+\DeclareFieldFormat{urldate}{\mkbibparens{#1 参照}}
