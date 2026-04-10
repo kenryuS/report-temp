@@ -136,6 +136,7 @@
         amsfonts
         unicode-math
         mathtools
+        lualatex-math
 
         # Graphics
         graphics
@@ -175,6 +176,19 @@
           pkgs._0xproto
           pkgs.qpdf
           pkgs.kdePackages.okular
+        ];
+      };
+      devShells.pandoc = pkgs.stdenv.mkDerivation {
+        inherit name;
+        shellHook = ''
+          export PS1="${name} pandoc \w \$ "
+        '';
+        buildInputs = [
+          texEnv
+          pkgs.pandoc
+          pkgs._0xproto
+          pkgs.qpdf
+          pkgs.qpdfview
         ];
       };
     }
