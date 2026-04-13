@@ -7,6 +7,8 @@
 \usepackage{etoolbox}
 \usepackage{ifthen}
 
+\setmainfont{TeX Gyre Pagella}
+
 \makeatletter
 \newcounter{researchercount}
 \setcounter{researchercount}{1}
@@ -14,10 +16,10 @@
 \newcommand{\researchercs}[1]{
     \ifthenelse{\isodd{\theresearchercount}}
     {
-        & \underline{(\theresearchercount) #1}
+        & {\underline{(\theresearchercount) #1}}
     }
     {
-        & \underline{(\theresearchercount) #1} \@arraycr
+        & {\underline{(\theresearchercount) #1}} \@arraycr
     }
     \stepcounter{researchercount}
 }
@@ -26,7 +28,7 @@
 \setcounter{expdatecount}{0}
 \newcommand{\expdates}{}
 \newcommand{\addExperimentDate}[1]{\listadd{\expdates}{#1}}
-\newcommand{\expdatecs}[1]{\stepcounter{expdatecount} & \underline{\theexpdatecount.\qquad #1} \@arraycr}
+\newcommand{\expdatecs}[1]{\stepcounter{expdatecount} & {\underline{\theexpdatecount.\qquad #1}} \@arraycr}
 
 \newcommand{\expgroup}[1]{\def\@expgroup{#1}}
 \newcommand{\reportid}[1]{\def\@reportid{#1}}
@@ -34,16 +36,15 @@
 \newcommand{\experimentTitle}{
     \begin{titlepage}
         \thispagestyle{empty}
+        \sffamily
         \begin{flushright}
-            提出締切\hspace{2em}{\@dueyear \@duemonth \@dueday}
-            
-            提出\qquad\hspace{1.84375em}{\@turninyear \@turninmonth \@turninday}
+            {提出日\qquad\hspace{1.6em}{\@turninyear \@turninmonth \@turninday}}
         \end{flushright}
 
         \vspace{2em}
 
         \begin{center}
-            {\Large {\@schoolyear}年度\quad {\@department} {\@grade}年}
+            {\Large \textrm{\@schoolyear}年度\quad {\@department} \textrm{\@grade}年}
 
             \vspace{2em}
 
@@ -53,21 +54,21 @@
         \begin{flushleft}
             \vspace{1em}
 
-            {\large レポート記号：\quad {\@reportid}}
+            {\large 課題記号\qquad {\@reportid}}
 
             \vspace{1em}
 
-            {\large 実験テーマ名：\quad {\@title}}
+            {\large 実験テーマ名\qquad {\@title}}
 
             \vspace{1em}
 
-            提出者：\quad \underline{実験班\quad \@expgroup}\quad \underline{名列番号\quad \@seatingnum}\quad \underline{氏名\quad \@author}
+            { 提出者：\quad \underline{実験班\quad \@expgroup}\quad \underline{名列番号\quad \@seatingnum}\quad \underline{氏名\quad \@author}}
 
             \vspace{1em}
 
-            \hspace{-0.5625em}\begin{tabular}{ lp{5em}p{5em} }
+            \hspace{-8.525pt}\begin{tabular}{ lp{5em}p{5em} }
                 \ifthenelse{\isundefined{\researchers}}{
-                    \multirow[t]{3}{7.3125em}{共同実験者：} & なし & \\
+                    \multirow[t]{3}{7.3125em}{共同実験者：} & {なし} & \\
                 }{
                     \multirow[t]{3}{7.3125em}{共同実験者：} \forlistloop{\researchercs}{\researchers}
                 }
@@ -75,7 +76,7 @@
 
             \vspace{5em}
 
-            \hspace{-0.5625em}\begin{tabular}{ lp{5em} }
+            \hspace{-6pt}\begin{tabular}{ lp{5em} }
                 \multirow[t]{3}{7.3125em}{実験実施日：} \forlistloop{\expdatecs}{\expdates}
             \end{tabular}
         \end{flushleft}
